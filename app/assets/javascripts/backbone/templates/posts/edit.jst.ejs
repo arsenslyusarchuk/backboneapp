@@ -1,0 +1,26 @@
+<div class="pull-right">
+  <h1>Edit post</h1>
+
+  <form id="edit-post" name="post">
+    <div class="field">
+      <label for="title"> title:</label>
+      <input type="text" name="title" id="title" value="<%= title %>" >
+    </div>
+
+    <div class="field">
+      <label for="description"> description:</label>
+      <input type="text" name="description" id="description" value="<%= description %>" >
+    </div>
+
+    <div class="field">
+      <label for="checked"> checked:</label>
+      <input type="checkbox" name="checked" id="checked" value="true" >
+    </div>
+
+    <div class="actions">
+      <input type="submit" value="Update Post" class="btn btn-primary"/>
+    </div>
+
+  </form>
+</div>
+
