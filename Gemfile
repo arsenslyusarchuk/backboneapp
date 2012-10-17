@@ -26,6 +26,7 @@ gem "rails-backbone"
 gem "twitter-bootstrap-rails"
 gem "haml-rails"
 gem "haml-bootstrap-rails"
+gem "heroku"
 
 group :development, :test do
   gem "jasminerice"
