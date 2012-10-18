@@ -6,7 +6,6 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-gem 'sinon-rails'
 gem 'json'
 
 # Gems used only for assets and not required
@@ -31,6 +30,7 @@ gem "heroku"
 group :development, :test do
   gem "jasminerice"
   gem "guard-jasmine"
+  gem 'sinon-rails'
 end
 
 group :production do
