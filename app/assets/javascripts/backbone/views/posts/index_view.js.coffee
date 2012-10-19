@@ -5,6 +5,7 @@ class Myapp.Views.Posts.IndexView extends Backbone.View
 
   events:
     "submit #new-post": "render"
+    
 
   initialize: () -> 
     @options.posts.bind('reset', @addAll)

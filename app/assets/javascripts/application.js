@@ -18,4 +18,5 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/myapp
+//= require jquery-validation-1.9.0/jquery.validate
 //= require_tree .

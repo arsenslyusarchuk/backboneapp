@@ -27,10 +27,17 @@ gem "haml-rails"
 gem "haml-bootstrap-rails"
 gem "heroku"
 
-group :development, :test do
-  gem "jasminerice"
-  gem "guard-jasmine"
+
+group :test, :development do
+  gem 'jasmine-rails'
+  gem 'jasmine'
+  gem 'guard-jasmine'
+  gem 'jasminerice'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
   gem 'sinon-rails'
+  gem "rspec-rails", "~> 2.0"
+  gem "capybara"
 end
 
 group :production do

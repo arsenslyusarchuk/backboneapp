@@ -20,7 +20,17 @@
 
 
   %body
-    
+    .navbar.navbar-ﬁxed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand(href="#") Myapp
+          .container.nav-collapse
+            %ul.nav
+              
 
     .container
 
@@ -29,8 +39,9 @@
           = bootstrap_flash
           #posts
             = yield
-          #new_post
-          #edit_post  
+          .edit_create     
+            #new_post
+            #edit_post  
         
       %footer  
         %p &copy; testapp2012

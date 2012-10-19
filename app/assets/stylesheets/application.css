@@ -11,3 +11,16 @@
  *= require_self
  *= require_tree .
  */
+.edit_create{
+	display: inline;
+
+}
+
+
+#edit_post{
+	float:right;
+}
+
+#new_post{
+	float: left;
+}

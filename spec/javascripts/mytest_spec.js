@@ -42,7 +42,7 @@ describe("Post model", function() {
 	          this.responseBody
 	        ]
 	      );
-	      this.eventSpy = jasmine.createSpy();
+	      this.eventSpy = jasmine.createSpy("aaa");
 	    });
 	    
 	    afterEach(function() {
@@ -52,7 +52,9 @@ describe("Post model", function() {
 	    it("should not save when title is empty", function() {
 	      this.post.bind("error", this.eventSpy);
 	      this.post.save({"title": ""});
-	      expect(this.eventSpy).toBe(true);	      
+	      expect(this.eventSpy).toHaveBeenCalled();
+		  expect(this.eventSpy.callCount).toBe(1);
+      
 	    });
   	}); 
 });

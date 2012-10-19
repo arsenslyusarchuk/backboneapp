@@ -5,7 +5,6 @@ class Myapp.Routers.PostsRouter extends Backbone.Router
 
   routes:
     "new"      : "newPost"
-    "index"    : "index"
     ":id/edit" : "edit"
     ":id"      : "show"
     ".*"        : "index"
@@ -17,8 +16,9 @@ class Myapp.Routers.PostsRouter extends Backbone.Router
   index: ->
     @view = new Myapp.Views.Posts.IndexView(posts: @posts)
     $("#posts").html(@view.render().el)
+    $("#new_post").html(@view.render())
     
-
+    
   show: (id) ->
     post = @posts.get(id)
 
@@ -29,4 +29,4 @@ class Myapp.Routers.PostsRouter extends Backbone.Router
     post = @posts.get(id)
 
     @view = new Myapp.Views.Posts.EditView(model: post)
-    $("#edit_post").append(@view.render().el)
+    $("#edit_post").html(@view.render().el)
