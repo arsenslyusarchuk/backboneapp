@@ -26,6 +26,8 @@ gem "twitter-bootstrap-rails"
 gem "haml-rails"
 gem "haml-bootstrap-rails"
 gem "heroku"
+gem "factory_girl_rails", "~> 4.0"
+
 
 
 group :test, :development do
@@ -38,12 +40,17 @@ group :test, :development do
   gem 'sinon-rails'
   gem "rspec-rails", "~> 2.0"
   gem "capybara"
+  gem "capybara-webkit"
+  
 end
 
 group :production do
   gem 'pg'
 end
 
+group :test do
+  gem "shoulda-matchers"
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
