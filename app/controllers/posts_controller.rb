@@ -50,7 +50,7 @@ class PostsController < ApplicationController
         format.json { render :json => @post, :status => :created, :location => @post }
       else
         format.html { render :action => "new" }
-        format.json { render :json => @post.errors, :status => :unprocessable_entity }
+        format.json { render :json => @post.errors.full_messages, :status => :unprocessable_entity }
       end
     end
   end
