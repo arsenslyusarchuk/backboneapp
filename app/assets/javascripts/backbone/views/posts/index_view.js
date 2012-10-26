@@ -6,11 +6,12 @@ Myapp.Views.Posts.IndexView = Backbone.View.extend({
 	template: JST["backbone/templates/posts/index"],
 
 	events: {
-		"submit #new-post": "render"	
+		"submit #new-post": "createPost"	
 	},
 
 	initialize: function() {
-		this.options.posts.bind('reset', this.addAll);
+		this.options.posts.bind('reset', this.render, this);
+		this.options.posts.bind('reset', this.addOne, this);
 	},
 
 	addAll: function() {
@@ -23,8 +24,13 @@ Myapp.Views.Posts.IndexView = Backbone.View.extend({
     	this.$("tbody").append(view.render().el);
 	},
 
+	createPost: function(event){
+		event.preventDefault();
+		this.options.posts.create({title: $("#title").val() , description: $("#description").val() , checked: $("checked").val()});
+
+	},
 	render: function() {
-		$(this.el).html(this.template({posts: this.options.posts.toJSON()}));
+		$(this.el).html(this.template());
     	 this.addAll();
     	 return this;
 	}

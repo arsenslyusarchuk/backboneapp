@@ -1,5 +1,5 @@
 Myapp.Models.Post = Backbone.Model.extend({
-	paramRoot: "post",
+	urlRoot: "posts",
 	defaults: {
         title: null,
     	description: null,
