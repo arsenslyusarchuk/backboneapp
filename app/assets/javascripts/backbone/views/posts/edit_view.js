@@ -21,7 +21,18 @@ Myapp.Views.Posts.EditView = Backbone.View.extend({
       		success: function(post) {
         		this.model = post;
         		window.location.hash = "/";
-      		}
+      		},
+      		error: function(post, jqXHR) {
+    			if (jqXHR.status == 422) {
+    			  post.set({errors: $.parseJSON(jqXHR.responseText)});
+    			  var message = post.get("errors");
+    			  $(message).each(function(){
+    			  	alert(this);
+    			  });   			  
+
+    			}
+    			
+    		}
     	});
 	},
 

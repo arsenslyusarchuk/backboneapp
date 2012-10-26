@@ -29,8 +29,8 @@ Myapp.Views.Posts.NewView = Backbone.View.extend({
     			  var message = post.get("errors");
     			  $(message).each(function(){
     			  	alert(this);
-    			  });   			  
-
+    			  });
+    			  post.destroy();
     			}
     			
     		}
